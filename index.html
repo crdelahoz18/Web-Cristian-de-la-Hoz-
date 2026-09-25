@@ -382,20 +382,23 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
       <div class="news-box">
         <div>
           <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem)">Ideas para liderar proyectos sin volverte loco</h2>
-          <p>Cada <span class="ph">[semana/quincena]</span> te escribo sobre gestión de proyectos, equipos y marketing digital. Sin teoría vacía: lo que funciona, lo que no y cómo aplicarlo mañana mismo.</p>
+          <p>Cada semana te escribo sobre gestión de proyectos, equipos y marketing digital. Sin teoría vacía: lo que funciona, lo que no y cómo aplicarlo mañana mismo.</p>
         </div>
         <div>
-          <form id="newsForm" novalidate>
+          <!-- Brevo: misma URL de envío y mismos nombres de campo que el formulario original -->
+          <form id="newsForm" method="POST" action="https://4b9f1516.sibforms.com/serve/MUIFAB7-7bGicOCfF85k8uGs4hHn6RJ4WKMfS9M8P48DR99G22Xou0xU23AtdkqLf6hvaNT4eBi7DurzpVkltkLBUM9nJGItvmXXE3OgUOtcNkz2gkVM7HijBMaB_TDxxh7X4eFKS6QniPcG1ZwYJOL2MoMtCCKkWijNz65I6EDovlQSFfoRpcvb-Ss1moZ6NYu4Wvk99GsTJZEw1Q==" data-type="subscription" novalidate>
             <div class="row2">
-              <input id="n-name" type="text" placeholder="Nombre" aria-label="Nombre" autocomplete="given-name" required>
-              <input id="n-email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+              <input id="n-name" name="NOMBRE" maxlength="200" type="text" placeholder="Nombre" aria-label="Nombre" autocomplete="given-name" required>
+              <input id="n-email" name="EMAIL" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
             </div>
+            <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+            <input type="hidden" name="locale" value="es">
             <label class="check"><input type="checkbox" id="n-privacy" required><span>Acepto recibir la newsletter y la <a href="#legal">política de privacidad</a>.</span></label>
-            <p class="err" id="newsErr" hidden>Escribe tu nombre, un email válido y marca la casilla.</p>
-            <div><button class="btn btn-primary" type="submit">Quiero recibirla</button></div>
+            <p class="err" id="newsErr" role="alert" hidden>Escribe tu nombre, un email válido y marca la casilla.</p>
+            <div><button class="btn btn-primary" id="newsBtn" type="submit">Quiero recibirla</button></div>
             <p class="micro">Sin spam. Te das de baja cuando quieras.</p>
           </form>
-          <p id="newsOk" hidden style="font-weight:600;color:var(--ink)">Listo. Revisa tu correo para confirmar la suscripción.</p>
+          <p id="newsOk" role="status" hidden style="font-weight:600;color:var(--ink)">Se ha realizado tu suscripción a mi newsletter. ¡Gracias!</p>
         </div>
       </div>
     </div>
@@ -474,12 +477,21 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
     var c=document.getElementById('caseOk'); c.hidden=false; c.scrollIntoView({block:'center'});
   });
 
-  document.getElementById('newsForm').addEventListener('submit',function(e){
+  // Newsletter: envío a Brevo sin salir de la página
+  var newsForm=document.getElementById('newsForm'), newsErr=document.getElementById('newsErr'), newsBtn=document.getElementById('newsBtn');
+  var MSG_INVALID='Escribe tu nombre, un email válido y marca la casilla.';
+  var MSG_FAIL='No hemos podido validar tu suscripción. Revisa tus datos e inténtalo de nuevo.';
+  newsForm.addEventListener('submit',function(e){
     e.preventDefault();
     var ok=document.getElementById('n-name').value.trim() && emailOk(document.getElementById('n-email').value) && document.getElementById('n-privacy').checked;
-    document.getElementById('newsErr').hidden=!!ok;
+    newsErr.textContent=MSG_INVALID;
+    newsErr.hidden=!!ok;
     if(!ok) return;
-    this.hidden=true; document.getElementById('newsOk').hidden=false;
+    newsBtn.disabled=true; newsBtn.textContent='Enviando…';
+    fetch(newsForm.action,{method:'POST',body:new FormData(newsForm)})
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
+      .then(function(){ newsForm.hidden=true; document.getElementById('newsOk').hidden=false; })
+      .catch(function(){ newsErr.textContent=MSG_FAIL; newsErr.hidden=false; newsBtn.disabled=false; newsBtn.textContent='Quiero recibirla'; });
   });
 })();
 </script>

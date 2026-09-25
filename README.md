@@ -6,8 +6,8 @@ Es una página estática: HTML y CSS en `index.html` e imágenes en `img/`. Para
 
 ## Pendiente antes de publicar
 
-- Conectar el formulario "Cuéntame tu caso" y el de la newsletter a un servicio real. Ahora solo validan y muestran el mensaje de confirmación.
-- Completar los huecos `[X]` días laborables y `[semana/quincena]`.
+- Conectar el formulario "Cuéntame tu caso" a un servicio real. Ahora solo valida y muestra el mensaje de confirmación. (La newsletter ya envía a Brevo.)
+- Completar el hueco `[X]` días laborables.
 - Confirmar los tramos del rango de inversión.
 - Email de contacto, enlaces a redes y textos legales (aviso legal, privacidad, cookies).
 - Sección de testimonios cuando haya testimonios reales.
