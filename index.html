@@ -341,37 +341,40 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
       <h2 style="margin-top:12px">Cuéntame qué está pasando en tu proyecto</h2>
       <p class="lede" style="margin-top:14px">Cuanto más claro me lo cuentes, mejor podré decirte si puedo ayudarte. Lo leo yo, no un bot.</p>
 
-      <form id="caseForm" novalidate>
+      <!-- Brevo: misma URL de envío y mismos nombres de campo que el formulario original. Los valores de las opciones deben coincidir con los de Brevo. -->
+      <form id="caseForm" method="POST" action="https://4b9f1516.sibforms.com/serve/MUIFAM4jSqUwXDaszt3Quj540Gl34TQY0SmhR1Xori5-DZ6QELeezJgtrSgfdvuHqkvDBfHL8gGONYAtvifHEhxWk9AIjwKBspsDlz_M6ixVejkow6AIN5FGro9wTI5GnkcHq92Bj-WfRNJCKyPLF5a1zY0-L2GGp6NlfGV9JtydfSliJBT5q5H3LyIEUoTU2Dnx5NKkFQKLgU_-Ww==" data-type="subscription" novalidate>
         <div class="two">
-          <div class="field"><label for="c-name">Nombre</label><input id="c-name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="c-name">Nombre</label><input id="c-name" name="NOMBRE" maxlength="200" type="text" autocomplete="given-name" required></div>
+          <div class="field"><label for="c-last">Apellidos</label><input id="c-last" name="APELLIDOS" maxlength="200" type="text" autocomplete="family-name" required></div>
         </div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="EMAIL" type="email" autocomplete="email" required></div>
         <fieldset class="field">
           <legend>Soy… <span class="opt">(opcional)</span></legend>
           <div class="chips">
-            <label><input type="radio" name="perfil" id="p-info" value="infoproductor"><span>Infoproductor</span></label>
-            <label><input type="radio" name="perfil" id="p-ag" value="agencia"><span>Agencia</span></label>
-            <label><input type="radio" name="perfil" id="p-emp" value="emprendedor"><span>Emprendedor</span></label>
-            <label><input type="radio" name="perfil" id="p-otro" value="otro"><span>Otro</span></label>
+            <label><input type="radio" name="SOY[]" id="p-info" value="Infoproductor"><span>Infoproductor</span></label>
+            <label><input type="radio" name="SOY[]" id="p-ag" value="Agencia"><span>Agencia</span></label>
+            <label><input type="radio" name="SOY[]" id="p-emp" value="Emprendedor"><span>Emprendedor</span></label>
           </div>
         </fieldset>
-        <div class="field"><label for="c-project">¿Cuál es tu proyecto o negocio? <span class="opt">(opcional)</span></label><input id="c-project" type="text"></div>
-        <div class="field"><label for="c-block">¿Cuál es el mayor bloqueo ahora mismo?</label><textarea id="c-block" required placeholder="Por ejemplo: lanzamos cada tres meses y siempre vamos tarde; nadie tiene claro quién aprueba qué."></textarea></div>
+        <div class="field"><label for="c-project">¿Cuál es tu proyecto o negocio? <span class="opt">(opcional)</span></label><input id="c-project" name="PROYECTO" maxlength="200" type="text"></div>
+        <div class="field"><label for="c-block">¿Cuál es el mayor bloqueo ahora mismo?</label><textarea id="c-block" name="BLOQUEO" maxlength="500" required placeholder="Por ejemplo: lanzamos cada tres meses y siempre vamos tarde; nadie tiene claro quién aprueba qué."></textarea><span class="opt" id="c-block-count" aria-live="polite">0 / 500</span></div>
         <div class="two">
           <div class="field"><label for="c-team">¿Cuántas personas hay en tu equipo? <span class="opt">(opcional)</span></label>
-            <select id="c-team"><option value="">Elige una opción</option><option>Solo yo</option><option>2 a 5</option><option>6 a 15</option><option>Más de 15</option></select></div>
+            <select id="c-team" name="PERSONAS[]"><option value="">Elige una opción</option><option>Solo yo</option><option>2 a 5</option><option>6 a 15</option><option>Más de 15</option></select></div>
           <div class="field"><label for="c-when">¿Para cuándo necesitas avanzar? <span class="opt">(opcional)</span></label>
-            <select id="c-when"><option value="">Elige una opción</option><option>Cuanto antes</option><option>En el próximo mes</option><option>En 1 a 3 meses</option><option>Solo estoy explorando</option></select></div>
+            <select id="c-when" name="AVANZAR[]"><option value="">Elige una opción</option><option>Cuanto antes</option><option>En el próximo mes</option><option>En 1 a 3 meses</option><option>Solo estoy explorando</option></select></div>
         </div>
         <div class="field"><label for="c-budget">Rango de inversión aproximado <span class="opt">(opcional, pero ahorra mucho filtrado)</span></label>
-          <select id="c-budget"><option value="">Elige una opción</option><option>Menos de 1.000 €</option><option>1.000 € a 3.000 €</option><option>3.000 € a 6.000 €</option><option>Más de 6.000 €</option><option>Prefiero hablarlo</option></select></div>
+          <select id="c-budget" name="RANGO[]"><option value="">Elige una opción</option><option value="Menos de 1000€">Menos de 1.000 €</option><option value="1000€ a 3000€">1.000 € a 3.000 €</option><option value="3000€ a 6000€">3.000 € a 6.000 €</option><option value="Más de 6000€">Más de 6.000 €</option><option>Prefiero hablarlo</option></select></div>
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+        <input type="hidden" name="locale" value="es">
         <label class="check"><input type="checkbox" id="c-privacy" required><span>He leído y acepto la <a href="#legal">política de privacidad</a>.</span></label>
-        <p class="err" id="caseErr" hidden>Completa nombre, email válido, tu mayor bloqueo y acepta la política de privacidad.</p>
-        <div><button class="btn btn-primary" type="submit">Enviar mi caso</button></div>
+        <p class="err" id="caseErr" role="alert" hidden>Completa nombre, apellidos, un email válido, tu mayor bloqueo y acepta la política de privacidad.</p>
+        <div><button class="btn btn-primary" id="caseBtn" type="submit">Enviar mi caso</button></div>
       </form>
-      <div class="confirm" id="caseOk" hidden>
+      <div class="confirm" id="caseOk" role="status" hidden>
         <h3>Recibido.</h3>
-        <p>Lo leeré con calma y te respondo en un máximo de <span class="ph">[X]</span> días laborables.</p>
+        <p>¡En el menor tiempo posible te daré una respuesta a tu caso!</p>
       </div>
     </div>
   </section>
@@ -467,14 +470,24 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
 
   var emailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());};
 
-  document.getElementById('caseForm').addEventListener('submit',function(e){
+  // Formulario de caso: envío a Brevo sin salir de la página
+  var caseForm=document.getElementById('caseForm'), caseErr=document.getElementById('caseErr'), caseBtn=document.getElementById('caseBtn');
+  var block=document.getElementById('c-block'), blockCount=document.getElementById('c-block-count');
+  block.addEventListener('input',function(){ blockCount.textContent=block.value.length+' / 500'; });
+  var CASE_INVALID='Completa nombre, apellidos, un email válido, tu mayor bloqueo y acepta la política de privacidad.';
+  var CASE_FAIL='No hemos podido validar tus datos. Revísalos e inténtalo de nuevo.';
+  caseForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var ok=document.getElementById('c-name').value.trim() && emailOk(document.getElementById('c-email').value)
-      && document.getElementById('c-block').value.trim() && document.getElementById('c-privacy').checked;
-    document.getElementById('caseErr').hidden=!!ok;
+    var ok=document.getElementById('c-name').value.trim() && document.getElementById('c-last').value.trim()
+      && emailOk(document.getElementById('c-email').value) && block.value.trim() && document.getElementById('c-privacy').checked;
+    caseErr.textContent=CASE_INVALID;
+    caseErr.hidden=!!ok;
     if(!ok) return;
-    this.hidden=true;
-    var c=document.getElementById('caseOk'); c.hidden=false; c.scrollIntoView({block:'center'});
+    caseBtn.disabled=true; caseBtn.textContent='Enviando…';
+    fetch(caseForm.action,{method:'POST',body:new FormData(caseForm)})
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
+      .then(function(){ caseForm.hidden=true; var c=document.getElementById('caseOk'); c.hidden=false; c.scrollIntoView({block:'center'}); })
+      .catch(function(){ caseErr.textContent=CASE_FAIL; caseErr.hidden=false; caseBtn.disabled=false; caseBtn.textContent='Enviar mi caso'; });
   });
 
   // Newsletter: envío a Brevo sin salir de la página
