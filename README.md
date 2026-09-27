@@ -6,5 +6,4 @@ Es un sitio estático: la home en `index.html`, las páginas legales (`aviso-leg
 
 ## Pendiente antes de publicar
 
-- Enlaces a LinkedIn e Instagram en el footer.
 - Sección de testimonios cuando haya testimonios reales.
