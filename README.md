@@ -6,5 +6,5 @@ Es una página estática: HTML y CSS en `index.html` e imágenes en `img/`. Para
 
 ## Pendiente antes de publicar
 
-- Email de contacto, enlaces a redes y textos legales (aviso legal, privacidad, cookies).
+- Enlaces a redes y textos legales (aviso legal, privacidad, cookies).
 - Sección de testimonios cuando haya testimonios reales.
