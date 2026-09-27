@@ -430,7 +430,8 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
             </div>
             <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
             <input type="hidden" name="locale" value="es">
-            <label class="check"><input type="checkbox" id="n-privacy" required><span>Acepto recibir la newsletter y la <a href="#legal">política de privacidad</a>.</span></label>
+            <label class="check"><input type="checkbox" id="n-optin" required><span>Acepto recibir la newsletter.</span></label>
+            <label class="check"><input type="checkbox" id="n-privacy" name="privacy_consent" value="1" required><span>He leído y acepto la <a href="/politica-privacidad.html">política de privacidad</a>.</span></label>
             <p class="err" id="newsErr" role="alert" hidden>Escribe tu nombre, un email válido y marca la casilla.</p>
             <div><button class="btn btn-primary" id="newsBtn" type="submit">Quiero recibirla</button></div>
             <p class="micro">Sin spam. Te das de baja cuando quieras.</p>
@@ -571,16 +572,19 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
 
   // Newsletter: envío a Brevo sin salir de la página
   var newsForm=document.getElementById('newsForm'), newsErr=document.getElementById('newsErr'), newsBtn=document.getElementById('newsBtn');
-  var MSG_INVALID='Escribe tu nombre, un email válido y marca la casilla.';
+  var MSG_INVALID='Escribe tu nombre, un email válido y marca las dos casillas.';
   var MSG_FAIL='No hemos podido validar tu suscripción. Revisa tus datos e inténtalo de nuevo.';
   newsForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var ok=document.getElementById('n-name').value.trim() && emailOk(document.getElementById('n-email').value) && document.getElementById('n-privacy').checked;
+    var ok=document.getElementById('n-name').value.trim() && emailOk(document.getElementById('n-email').value)
+      && document.getElementById('n-optin').checked && document.getElementById('n-privacy').checked;
     newsErr.textContent=MSG_INVALID;
     newsErr.hidden=!!ok;
     if(!ok) return;
     newsBtn.disabled=true; newsBtn.textContent='Enviando…';
-    fetch(newsForm.action,{method:'POST',body:new FormData(newsForm)})
+    // El consentimiento de privacidad solo se valida aquí; no se envía a Brevo
+    var data=new FormData(newsForm); data.delete('privacy_consent');
+    fetch(newsForm.action,{method:'POST',body:data})
       .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
       .then(function(){ newsForm.hidden=true; document.getElementById('newsOk').hidden=false; })
       .catch(function(){ newsErr.textContent=MSG_FAIL; newsErr.hidden=false; newsBtn.disabled=false; newsBtn.textContent='Quiero recibirla'; });
