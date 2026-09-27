@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de cookies · Cristian de la Hoz</title>
+<meta name="description" content="Política de cookies de cristiandelahoz.com: qué cookies usa el sitio y cómo gestionarlas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Cristian de la Hoz<span>PM · MKT DIGITAL</span></a>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#como-trabajo">Cómo trabajo</a></li>
+        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="index.html#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="index.html#caso" data-cta="header">Cuéntame tu caso</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="legal-page">
+  <article class="wrap prose">
+    <a class="back" href="index.html">← Volver al inicio</a>
+    <h1>Política de cookies</h1>
+    <p class="updated">Última actualización: 28/09/2026</p>
+
+    <p>Este sitio web, cristiandelahoz.com, utiliza cookies propias y/o de terceros para su correcto funcionamiento.</p>
+
+    <h2>¿Qué son las cookies?</h2>
+    <p>Las cookies son pequeños archivos que se almacenan en el navegador del usuario y que permiten reconocer su dispositivo en visitas sucesivas.</p>
+
+    <h2>Cookies utilizadas en este sitio</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Tipo</th><th scope="col">Finalidad</th><th scope="col">Proveedor</th><th scope="col">¿Requiere consentimiento?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Técnicas / necesarias</td><td>Funcionamiento básico del sitio y de los formularios</td><td>Propias</td><td>No</td></tr>
+          <tr><td>Formulario de contacto y newsletter</td><td>Gestión del envío de formularios</td><td>Brevo (Sendinblue SAS)</td><td>Puede requerirlo según configuración</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Si en el futuro se incorporan cookies de analítica o publicidad, esta tabla y el sistema de consentimiento (banner) se actualizarán antes de activarlas.</p>
+
+    <h2>¿Cómo puedo gestionar las cookies?</h2>
+    <p>El usuario puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador que utilice (Chrome, Firefox, Safari, Edge, etc.).</p>
+
+    <h2>Actualizaciones de esta política</h2>
+    <p>Esta política de cookies puede actualizarse en función de nuevos requisitos legales o cambios en las herramientas utilizadas en el sitio web. Se recomienda revisarla periódicamente.</p>
+  </article>
+</main>
+
+<footer id="legal">
+  <div class="wrap">
+    <div class="foot">
+      <div class="stack">
+        <a class="logo" href="index.html">Cristian de la Hoz</a>
+        <p>Project Manager para infoproductores, agencias, emprendedores y profesionales que quieren construir su marca desde cero.</p>
+        <div><a class="btn btn-primary btn-sm" href="index.html#caso" data-cta="footer">Cuéntame tu caso →</a></div>
+      </div>
+      <div>
+        <h3>Contacto y redes</h3>
+        <ul>
+          <li><a href="mailto:cristian@cristiandelahoz.com">cristian@cristiandelahoz.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <p>Ideas para liderar proyectos sin volverte loco.</p>
+        <form class="mini" id="miniForm" novalidate>
+          <input id="m-email" type="email" placeholder="Tu email" aria-label="Tu email">
+          <a class="btn btn-primary btn-sm" href="index.html#newsletter">Suscribirme</a>
+        </form>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Cristian de la Hoz</span>
+      <span><a href="aviso-legal.html">Aviso legal</a> · <a href="politica-privacidad.html">Política de privacidad</a> · <a href="politica-cookies.html" aria-current="page">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');} });
+})();
+</script>
+
+</body>
+</html>
