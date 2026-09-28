@@ -92,7 +92,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:co
 .portrait{position:relative}
 .photo{aspect-ratio:4/5;max-width:100%;border-radius:var(--r);background:repeating-linear-gradient(135deg,var(--alt) 0 12px,var(--bg) 12px 24px);border:1px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font:500 .8rem/1.5 var(--mono);padding:20px}
 .pic{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:var(--r);background:#6f6f6f}
-.pic-about{aspect-ratio:4/5;object-position:45% 35%}
+.pic-about{aspect-ratio:4/5;object-position:top center}
 /* Escritorio: la tarjeta va en el flujo, debajo de la foto, montando solo sus últimos 60px.
    Al estar en el flujo, el hero crece con ella y no choca con la sección siguiente. */
 .board{position:relative;z-index:1;margin-top:-60px;margin-left:-16px;width:min(280px,82%);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 40px -18px rgba(0,0,0,.35);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
