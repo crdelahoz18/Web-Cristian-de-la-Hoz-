@@ -265,8 +265,7 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
 .t-person{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;line-height:1.3}
 .t-person strong{display:block;font-weight:600}
 .t-role{display:block;font-size:.88rem;color:var(--muted)}
-.t-avatar{position:relative;width:52px;height:52px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--alt);color:var(--muted);font:700 .95rem/1 var(--display)}
-.t-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t-avatar{display:block;width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--alt)}
 .t-card blockquote{margin:0;position:relative;padding-top:22px}
 .t-card blockquote::before{content:"\201C";position:absolute;top:-6px;left:-2px;font:800 2.6rem/1 var(--display);color:var(--line)}
 .t-card blockquote p{font-size:1.02rem;line-height:1.65}
