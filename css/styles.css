@@ -3,7 +3,7 @@
   --accent:#F2A516; --accent-ink:#1B1406; --accent-soft:#FBEDC8; --dark:#141B17; --dark-ink:#E7ECE6; --dark-muted:#9AA69E;
   --done:#2F7D55;
   --ok-bg:#DDF0E4; --ok-ink:#1F6242; --rev-bg:#FBEDC8; --rev-ink:#7A5200; --blk-bg:#F9DEDB; --blk-ink:#A2291E;
-  --shadow:rgba(23,32,27,.18); --kw:#17201B; --kw-bg:#FBEDC8;
+  --shadow:rgba(23,32,27,.18); --kw:#17201B; --kw-bg:#FBEDC8; --accent-text:#8A5700;
   --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body:"Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
@@ -14,14 +14,14 @@
     color-scheme:dark;
     --bg:#101512; --surface:#18201B; --alt:#141B17; --ink:#E7ECE6; --muted:#9AA69E; --line:#2A342E;
     --accent:#F4B032; --accent-ink:#1B1406; --accent-soft:#2A2414; --dark:#0B0F0D; --done:#5DBB88;
-    --ok-bg:#183426; --ok-ink:#7FD3A2; --rev-bg:#3A2E12; --rev-ink:#F4C766; --blk-bg:#3B1D1A; --blk-ink:#F29A90; --shadow:rgba(0,0,0,.5); --kw:#F4B032; --kw-bg:transparent;
+    --ok-bg:#183426; --ok-ink:#7FD3A2; --rev-bg:#3A2E12; --rev-ink:#F4C766; --blk-bg:#3B1D1A; --blk-ink:#F29A90; --shadow:rgba(0,0,0,.5); --kw:#F4B032; --kw-bg:transparent; --accent-text:#F4B032;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#101512; --surface:#18201B; --alt:#141B17; --ink:#E7ECE6; --muted:#9AA69E; --line:#2A342E;
   --accent:#F4B032; --accent-ink:#1B1406; --accent-soft:#2A2414; --dark:#0B0F0D; --done:#5DBB88;
-    --ok-bg:#183426; --ok-ink:#7FD3A2; --rev-bg:#3A2E12; --rev-ink:#F4C766; --blk-bg:#3B1D1A; --blk-ink:#F29A90; --shadow:rgba(0,0,0,.5); --kw:#F4B032; --kw-bg:transparent;
+    --ok-bg:#183426; --ok-ink:#7FD3A2; --rev-bg:#3A2E12; --rev-ink:#F4C766; --blk-bg:#3B1D1A; --blk-ink:#F29A90; --shadow:rgba(0,0,0,.5); --kw:#F4B032; --kw-bg:transparent; --accent-text:#F4B032;
 }
 *{box-sizing:border-box}
 body{margin:0}
@@ -279,3 +279,6 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
   .t-grid{grid-template-columns:1fr}
   .t-card:last-child:nth-child(odd){width:auto;justify-self:stretch}
 }
+
+/* Énfasis de tono de voz en "Sobre mí": cursiva en color de acento (versión oscura del ámbar en tema claro para que se lea) */
+.voice{font-style:italic;color:var(--accent-text)}
