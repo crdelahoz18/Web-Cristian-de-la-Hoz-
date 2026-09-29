@@ -6,4 +6,4 @@ Es un sitio estático: la home en `index.html`, las páginas legales (`aviso-leg
 
 ## Pendiente antes de publicar
 
-- Sección de testimonios cuando haya testimonios reales.
+- Fotos de los testimonios en `img/testimonios/` (testimonial-juliete.jpg, testimonial-lihuel.jpg, testimonial-yaremi.jpg, testimonial-nahuel.jpg, testimonial-leire.jpg). Mientras falten, se ven las iniciales.
