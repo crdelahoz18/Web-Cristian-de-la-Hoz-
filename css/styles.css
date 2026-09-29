@@ -282,3 +282,6 @@ footer h3{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppe
 
 /* Énfasis de tono de voz en "Sobre mí": cursiva en color de acento (versión oscura del ámbar en tema claro para que se lea) */
 .voice{font-style:italic;color:var(--accent-text)}
+
+/* Declaración dentro del párrafo del dolor: negrita en ámbar, sin fondo (la banda es oscura en ambos temas) */
+.declare{font-weight:700;color:var(--accent)}
