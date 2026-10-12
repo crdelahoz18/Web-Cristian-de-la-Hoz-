@@ -22,7 +22,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#como-trabajo">Cómo trabajo</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="ebook.html">Ebook</a></li>
       </ul>
     </nav>
     <div class="nav-right">
@@ -43,7 +43,7 @@
         <p class="lede">Soy Cristian, Project Manager Digital. Dirijo tus equipos, lanzamientos y proyectos para que sigas enfocado en lo tuyo — crear, vender, crecer — sin perderte en lo operativo. Trabajes solo, con equipo, o estés construyendo tu marca desde cero.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#caso" data-cta="hero">Cuéntame tu caso →</a>
-          <a class="btn btn-ghost" href="#newsletter" data-cta="hero-news">Prefiero recibir la newsletter</a>
+          <a class="btn btn-ghost" href="ebook.html" data-cta="hero-ebook">Descargar el ebook gratis</a>
         </div>
         <p class="micro">Leo cada caso personalmente y te respondo si puedo ayudarte.</p>
       </div>
@@ -230,8 +230,6 @@
           <div class="field"><label for="c-when">¿Para cuándo necesitas avanzar? <span class="opt">(opcional)</span></label>
             <select id="c-when" name="AVANZAR[]"><option value="">Elige una opción</option><option>Cuanto antes</option><option>En el próximo mes</option><option>En 1 a 3 meses</option><option>Solo estoy explorando</option></select></div>
         </div>
-        <div class="field"><label for="c-budget">Rango de inversión aproximado <span class="opt">(opcional, pero ahorra mucho filtrado)</span></label>
-          <select id="c-budget" name="RANGO[]"><option value="">Elige una opción</option><option value="Menos de 1000€">Menos de 1.000 €</option><option value="1000€ a 3000€">1.000 € a 3.000 €</option><option value="3000€ a 6000€">3.000 € a 6.000 €</option><option value="Más de 6000€">Más de 6.000 €</option><option>Prefiero hablarlo</option></select></div>
         <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
         <input type="hidden" name="locale" value="es">
         <label class="check"><input type="checkbox" id="c-privacy" required><span>He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
@@ -245,30 +243,17 @@
     </div>
   </section>
 
-  <!-- 10. Newsletter -->
-  <section class="news" id="newsletter">
+  <!-- 10. Ebook: banner hacia ebook.html (ocupa el lugar de la antigua sección de newsletter) -->
+  <section class="news" id="ebook-cta">
     <div class="wrap">
       <div class="news-box">
         <div>
-          <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem)">Ideas para liderar proyectos sin volverte loco</h2>
-          <p>Cada semana te escribo sobre gestión de proyectos, equipos y marketing digital. Sin teoría vacía: lo que funciona, lo que no y cómo aplicarlo mañana mismo.</p>
+          <span class="label">Ebook gratuito</span>
+          <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem);margin-top:12px">¿Tienes talento y experiencia, pero no sabes por dónde empezar?</h2>
+          <p>Descarga «Tu talento no es común»: una guía práctica para descubrir qué sabes que otros necesitan y validarlo en 14 días.</p>
         </div>
         <div>
-          <!-- Brevo: misma URL de envío y mismos nombres de campo que el formulario original -->
-          <form id="newsForm" method="POST" action="https://4b9f1516.sibforms.com/serve/MUIFAB7-7bGicOCfF85k8uGs4hHn6RJ4WKMfS9M8P48DR99G22Xou0xU23AtdkqLf6hvaNT4eBi7DurzpVkltkLBUM9nJGItvmXXE3OgUOtcNkz2gkVM7HijBMaB_TDxxh7X4eFKS6QniPcG1ZwYJOL2MoMtCCKkWijNz65I6EDovlQSFfoRpcvb-Ss1moZ6NYu4Wvk99GsTJZEw1Q==" data-type="subscription" novalidate>
-            <div class="row2">
-              <input id="n-name" name="NOMBRE" maxlength="200" type="text" placeholder="Nombre" aria-label="Nombre" autocomplete="given-name" required>
-              <input id="n-email" name="EMAIL" type="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
-            </div>
-            <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-            <input type="hidden" name="locale" value="es">
-            <label class="check"><input type="checkbox" id="n-optin" required><span>Acepto recibir la newsletter.</span></label>
-            <label class="check"><input type="checkbox" id="n-privacy" name="privacy_consent" value="1" required><span>He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
-            <p class="err" id="newsErr" role="alert" hidden>Escribe tu nombre, un email válido y marca la casilla.</p>
-            <div><button class="btn btn-primary" id="newsBtn" type="submit">Quiero recibirla</button></div>
-            <p class="micro">Sin spam. Te das de baja cuando quieras.</p>
-          </form>
-          <p id="newsOk" role="status" hidden style="font-weight:600;color:var(--ink)">Se ha realizado tu suscripción a mi newsletter. ¡Gracias!</p>
+          <a class="btn btn-primary" href="ebook.html" data-cta="ebook-banner">Descargar el ebook gratis →</a>
         </div>
       </div>
     </div>
@@ -306,6 +291,7 @@
           <li><a href="https://www.instagram.com/crisdelahoz_pm/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </div>
+      <!-- TODO: este mini-formulario dependía de la sección de newsletter de la home, que ya no existe. Ahora no envía nada: decidir si se elimina, se conecta a Brevo o se cambia por un enlace al ebook. -->
       <div>
         <h3>Newsletter</h3>
         <p>Ideas para liderar proyectos sin volverte loco.</p>
@@ -375,11 +361,6 @@
     });
   });
 
-  // Footer mini-form: carry the email to the main newsletter block
-  document.querySelector('#miniForm a').addEventListener('click',function(){
-    var v=document.getElementById('m-email').value; if(v) document.getElementById('n-email').value=v;
-  });
-
   var emailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());};
 
   // Formulario de caso: envío a Brevo sin salir de la página
@@ -400,26 +381,6 @@
       .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
       .then(function(){ caseForm.hidden=true; var c=document.getElementById('caseOk'); c.hidden=false; c.scrollIntoView({block:'center'}); })
       .catch(function(){ caseErr.textContent=CASE_FAIL; caseErr.hidden=false; caseBtn.disabled=false; caseBtn.textContent='Enviar mi caso'; });
-  });
-
-  // Newsletter: envío a Brevo sin salir de la página
-  var newsForm=document.getElementById('newsForm'), newsErr=document.getElementById('newsErr'), newsBtn=document.getElementById('newsBtn');
-  var MSG_INVALID='Escribe tu nombre, un email válido y marca las dos casillas.';
-  var MSG_FAIL='No hemos podido validar tu suscripción. Revisa tus datos e inténtalo de nuevo.';
-  newsForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var ok=document.getElementById('n-name').value.trim() && emailOk(document.getElementById('n-email').value)
-      && document.getElementById('n-optin').checked && document.getElementById('n-privacy').checked;
-    newsErr.textContent=MSG_INVALID;
-    newsErr.hidden=!!ok;
-    if(!ok) return;
-    newsBtn.disabled=true; newsBtn.textContent='Enviando…';
-    // El consentimiento de privacidad solo se valida aquí; no se envía a Brevo
-    var data=new FormData(newsForm); data.delete('privacy_consent');
-    fetch(newsForm.action,{method:'POST',body:data})
-      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
-      .then(function(){ newsForm.hidden=true; document.getElementById('newsOk').hidden=false; })
-      .catch(function(){ newsErr.textContent=MSG_FAIL; newsErr.hidden=false; newsBtn.disabled=false; newsBtn.textContent='Quiero recibirla'; });
   });
 })();
 </script>

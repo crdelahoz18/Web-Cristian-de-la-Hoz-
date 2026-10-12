@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu talento no es común · Ebook gratuito de Cristian de la Hoz</title>
+<meta name="description" content="Ebook gratuito: descubre qué sabes que otros necesitan, elige tu mejor idea con un filtro de 4 criterios y valídala en 14 días.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Cristian de la Hoz<span>Project Manager Digital</span></a>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#como-trabajo">Cómo trabajo</a></li>
+        <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a href="ebook.html" aria-current="page">Ebook</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="index.html#caso" data-cta="header">Cuéntame tu caso</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- a) Hero del ebook -->
+  <section class="hero ebook-hero">
+    <div class="wrap hero-grid">
+      <div class="stack" style="gap:22px">
+        <span class="label">Ebook gratuito</span>
+        <h1>Tu talento <span class="uline">no es común</span></h1>
+        <p class="lede">Descubre qué sabes que otros necesitan y conviértelo en tu primera oferta. Una guía práctica para ordenar tu conocimiento, elegir una idea con criterio y validarla en 14 días, antes de dedicar meses a construirla.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#descarga" data-cta="ebook-hero">Quiero el ebook →</a>
+        </div>
+      </div>
+      <div class="cover">
+        <!-- Portada provisional: sustituir el archivo por la portada definitiva con el mismo nombre -->
+        <img src="img/ebook/portada-placeholder.jpg" alt="Portada del ebook «Tu talento no es común», de Cristian de la Hoz" width="800" height="1100">
+      </div>
+    </div>
+  </section>
+
+  <!-- b) Qué te llevas -->
+  <section class="ebook-benefits">
+    <div class="wrap">
+      <h2>Qué te llevas</h2>
+      <div class="cards3">
+        <div class="acard"><span class="label">Descubre</span><h3>Lo que ya sabes, por escrito</h3><p>Un registro de preguntas y un mapa de conocimiento para ver con claridad qué sabes que otros necesitan.</p></div>
+        <div class="acard"><span class="label">Elige</span><h3>Un filtro de 4 criterios</h3><p>Para decidir, entre todas tus ideas, cuál merece convertirse en tu primer producto.</p></div>
+        <div class="acard"><span class="label">Valida</span><h3>Un plan de 14 días</h3><p>Para comprobar si hay interés real antes de construir nada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- c) Formulario de captura -->
+  <section class="ebook-gate" id="descarga">
+    <div class="wrap">
+      <div class="gate">
+        <h2>Descárgalo gratis</h2>
+        <p class="lede">Déjame tu email y podrás descargar el PDF al momento.</p>
+
+        <!-- Brevo: pega en el atributo action la URL de envío del formulario de Brevo asociado a la lista "Descargas Ebook".
+             Mientras action esté vacío, el formulario NO guarda el email en ningún sitio: solo muestra la descarga. -->
+        <form id="ebookForm" method="POST" action="" data-type="subscription" novalidate>
+          <div class="field"><label for="e-email">Email</label><input id="e-email" name="EMAIL" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+          <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+          <input type="hidden" name="locale" value="es">
+          <label class="check"><input type="checkbox" id="e-privacy" name="privacy_consent" value="1" required><span>He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+          <p class="err" id="ebookErr" role="alert" hidden>Escribe un email válido y acepta la política de privacidad.</p>
+          <div><button class="btn btn-primary" id="ebookBtn" type="submit">Quiero descargarlo</button></div>
+        </form>
+
+        <div id="ebookOk" role="status" hidden>
+          <h3>Listo. Aquí lo tienes.</h3>
+          <!-- PDF provisional: sustituir el archivo por el definitivo con el mismo nombre -->
+          <p><a class="btn btn-primary" href="img/ebook/tu-talento-no-es-comun-PLACEHOLDER.pdf" download="Tu-talento-no-es-comun.pdf" data-cta="ebook-download">Descargar el PDF ↓</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- d) Quién soy -->
+  <section class="ebook-bio">
+    <div class="wrap">
+      <div class="bio">
+        <img src="img/cristian.webp" alt="Cristian de la Hoz" width="72" height="72" loading="lazy">
+        <div>
+          <h3>Soy Cristian de la Hoz</h3>
+          <p>Project Manager Digital. Llevo años liderando equipos, lanzamientos y marcas personales construidas desde cero, y acompaño a profesionales con talento a convertir lo que saben en su primer producto digital.</p>
+          <p><a href="index.html#sobre-mi">Conoce cómo trabajo →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="legal">
+  <div class="wrap">
+    <div class="foot">
+      <div class="stack">
+        <a class="logo" href="index.html">Cristian de la Hoz</a>
+        <p>Project Manager para infoproductores, agencias, emprendedores y profesionales que quieren construir su marca desde cero.</p>
+        <div><a class="btn btn-primary btn-sm" href="index.html#caso" data-cta="footer">Cuéntame tu caso →</a></div>
+      </div>
+      <div>
+        <h3>Contacto y redes</h3>
+        <ul>
+          <li><a href="mailto:cristian@cristiandelahoz.com">cristian@cristiandelahoz.com</a></li>
+          <li><a href="https://es.linkedin.com/in/cristian-de-la-hoz-plaza" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/crisdelahoz_pm/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ebook gratuito</h3>
+        <p>«Tu talento no es común»: descubre qué sabes que otros necesitan.</p>
+        <p style="margin-top:12px"><a class="btn btn-primary btn-sm" href="#descarga">Descargar →</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Cristian de la Hoz</span>
+      <span><a href="aviso-legal.html">Aviso legal</a> · <a href="politica-privacidad.html">Política de privacidad</a> · <a href="politica-cookies.html">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');} });
+
+  // Formulario del ebook: envía el email a Brevo (si hay URL configurada) y muestra la descarga sin recargar
+  var form=document.getElementById('ebookForm'), err=document.getElementById('ebookErr'), btn=document.getElementById('ebookBtn'), ok=document.getElementById('ebookOk');
+  var action=form.getAttribute('action');
+  var MSG_INVALID='Escribe un email válido y acepta la política de privacidad.';
+  var MSG_FAIL='No hemos podido registrar tu email. Revísalo e inténtalo de nuevo.';
+  var emailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());};
+  var reveal=function(){ form.hidden=true; ok.hidden=false; };
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var valid=emailOk(document.getElementById('e-email').value) && document.getElementById('e-privacy').checked;
+    err.textContent=MSG_INVALID;
+    err.hidden=!!valid;
+    if(!valid) return;
+    if(!action){ console.warn('Ebook: falta la URL de Brevo en el action del formulario; el email no se guarda.'); reveal(); return; }
+    btn.disabled=true; btn.textContent='Enviando…';
+    // El consentimiento de privacidad solo se valida aquí; no se envía a Brevo
+    var data=new FormData(form); data.delete('privacy_consent');
+    fetch(action,{method:'POST',body:data})
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ if(!r.ok||d.success===false) throw new Error(); }); })
+      .then(reveal)
+      .catch(function(){ err.textContent=MSG_FAIL; err.hidden=false; btn.disabled=false; btn.textContent='Quiero descargarlo'; });
+  });
+})();
+</script>
+
+</body>
+</html>
